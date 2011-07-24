@@ -1,8 +1,10 @@
-This is a sbt 0.10.x plugin for scct the scala code coverage tool.
+### This is a sbt 0.10.x plugin for scct the scala code coverage tool.
 
 * scct: http://mtkopone.github.com/scct/
 
-## Commands:
+### WARNING the Jar in the downoads section only works with sbt 0.10.1
+
+### Commands:
 
 * coverage:compile
 * coverage:test
@@ -12,7 +14,7 @@ coverage:test and coverage:doc do the same, so that if you run coverage:package-
 
 docDirectory is reused for the coverage report directory
 
-## Compiling from Source
+### Compiling from Source
 
 To compile the plugin from source put the source in .sbt/project/plugins/project and add the plugin as a dependency in .sbt/project/plugins/build.sbt
 
