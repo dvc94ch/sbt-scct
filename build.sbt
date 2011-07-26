@@ -2,7 +2,7 @@ sbtPlugin := true
 
 name := "scct-plugin"
 
-organization := "craven.ch"
+organization := "ch.craven"
 
 version := "0.2"
 

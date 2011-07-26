@@ -1,10 +1,10 @@
-### This is a sbt 0.10.x plugin for scct the scala code coverage tool.
+#### This is a sbt 0.10.x plugin for [scct](http://mtkopone.github.com/scct/) the scala code coverage tool.
 
-* scct: http://mtkopone.github.com/scct/
+scct ist auto-installed depending on the scalaVersion of the project.
 
 ### WARNING the Jar in the downoads section only works with sbt 0.10.1
 
-### Commands:
+#### Commands:
 
 * coverage:compile
 * coverage:test
@@ -14,10 +14,21 @@ coverage:test and coverage:doc do the same, so that if you run coverage:package-
 
 docDirectory is reused for the coverage report directory
 
-### Compiling from Source
+#### Compiling from Source
 
-To compile the plugin from source put the source in .sbt/project/plugins/project and add the plugin as a dependency in .sbt/project/plugins/build.sbt
+1. retrive the sources from github:
 
-libraryDependencies += "ch.craven" %% "scct-plugin" % "0.2"
+	git clone git@github.com:dvc94ch/sbt-scct.git
 
-Don't forget to set the sbt version you're using for your project by editing the sbt-scct/project/build.properties file.
+2. set sbt version in sbt-scct/project/build.properties:
+
+	sbt.version=0.10.1
+
+3. publish plugin:
+
+	cd sbt-scct
+	sbt publish-local
+
+4. add plugin dependency in .sbt/project/plugins/build.sbt:
+
+	libraryDependencies += "ch.craven" %% "scct-plugin" % "0.2"
