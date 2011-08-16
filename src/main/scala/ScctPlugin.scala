@@ -24,7 +24,7 @@ object ScctPlugin extends Plugin {
 			resolvers += "scct repository" at "http://mtkopone.github.com/scct/maven-repo",
 			
 			libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
-				val map = Map("2.9.0" -> "2.9.0-1", "2.8.1" -> "2.8.0", "2.8.0" -> "2.8.0", "2.7.7" -> "2.7.7")
+				val map = Map("2.9.0-1" -> "2.9.0-1","2.9.0" -> "2.9.0-1", "2.8.1" -> "2.8.0", "2.8.0" -> "2.8.0", "2.7.7" -> "2.7.7")
 				val scctVersion = map.getOrElse(sv, error("Unsupported Scala version " + sv))
 				deps :+ "reaktor" % ("scct_" + scctVersion) % "0.1-SNAPSHOT" % "coverage"
 			},
