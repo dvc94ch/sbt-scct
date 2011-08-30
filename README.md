@@ -32,3 +32,7 @@ docDirectory is reused for the coverage report directory
 4. add plugin dependency in .sbt/project/plugins/build.sbt:
 
 	libraryDependencies += "ch.craven" %% "scct-plugin" % "0.2"
+	
+5. to enable ScctPlugin in your project, add the following line to your build.sbt
+
+	seq(ScctPlugin.scctSettings: _*)
