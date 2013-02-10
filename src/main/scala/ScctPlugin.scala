@@ -32,7 +32,8 @@ object ScctPlugin extends Plugin {
 
 			/* configuring scope 'Coverage' */
 			sources in Coverage <<= (sources in Compile).identity,
-
+			resources in Coverage <<= (resources in Compile).identity,
+			
 			scalacOptions in Coverage <++= update.map { report =>
 				// gets the jars declared in the coverage configuration
     			val scctJars = report matching configurationFilter("coverage")
@@ -78,7 +79,8 @@ object ScctPlugin extends Plugin {
 
 			/* configuring scope 'CoverageTest' */
 			sources in CoverageTest <<= (sources in Test).identity,
-
+			resources in CoverageTest <<= (resources in Test).identity,
+			
 			fullClasspath in CoverageTest <<=
 				(fullClasspath in CoverageTest, classDirectory in Compile, classDirectory in Coverage)
 					map { (cp, remove, add) =>
